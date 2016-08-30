@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>Introduction to the DOM</title>
+    <script>
+    function changeColor(color) {
+        this.style.color = color;
+    }
+
+    function setBodyColor() {
+        console.log(arguments);
+        changeColor.apply(document.body, arguments);
+    }
+
+    window.onload = function () {
+
+        var main = document.getElementById("main");
+
+        changeColor.call(main, "red");
+
+        setBodyColor("green");
+    }
+    </script>
+</head>
+<body>
+    <h1 id="main">Introduction to the DOM</h1>
+    <input type="button" value="2">
+    <p class="test">There are a number of reasons why the DOM is awesome, here are some:</p>
+    <ul>
+        <li id="everywhere">It can be found everywhere.</li>
+        <li class="test">It's easy to use.</li>
+        <li class="test">It can help you to find what you want, really quickly.</li>
+    </ul>
+</body>
+</html>
